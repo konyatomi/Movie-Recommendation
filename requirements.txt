@@ -1,0 +1,9 @@
+# Filmajánló rendszer függőségei (pip install -r requirements.txt)
+# pandas: CSV betöltés, DataFrame, pivot tábla
+# numpy: tömbök, korreláció, átlag, súlyozott átlag
+# scikit-learn: train_test_split (70/30 felosztás)
+# scipy: opcionális (jelenleg numpy.corrcoef-et használunk)
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+scipy>=1.9.0
