@@ -1,7 +1,7 @@
 """
 Főprogram: filmajánló rendszer futtatása és összehasonlítás.
 
-Lépések: adatok betöltése → 70/30 split → cold-start szűrés (opcionális mintavételezés)
+Lépések: adatok betöltése → train/test split (config.TEST_SIZE) → cold-start szűrés (opcionális mintavételezés)
 → user-based és item-based modell tanítása → előrejelzés a teszt halmazon
 → RMSE, MAE, Precision@10, Recall@10 számítása → összehasonlító táblázat kiírása.
 """
@@ -27,7 +27,9 @@ def main():
         sys.exit(1)
 
     print(f"Ratings: {len(ratings)}, Movies: {len(movies)}", flush=True)
-    print("Splitting 70/30 train/test...", flush=True)
+    train_pct = round((1.0 - config.TEST_SIZE) * 100)
+    test_pct = round(config.TEST_SIZE * 100)
+    print(f"Splitting {train_pct}/{test_pct} train/test...", flush=True)
     train_ratings, test_ratings = split_data(ratings)
     print(f"Train: {len(train_ratings)}, Test: {len(test_ratings)}", flush=True)
 
