@@ -8,7 +8,7 @@ a train/test felosztás aránya, a kollaboratív szűrés paraméterei
 
 # ========== Adatfájlok helye ==========
 # A projekt gyökérhez viszonyított mappa, ahol a MovieLens CSV-k vannak
-DATA_DIR = "src/archive/ml-latest-small"
+DATA_DIR = "data/ml-latest-small"
 # Az értékelések fájlja (userId, movieId, rating, timestamp)
 RATINGS_FILE = "ratings.csv"
 # A filmek listája (movieId, title, genres)
